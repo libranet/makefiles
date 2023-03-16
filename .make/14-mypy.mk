@@ -1,11 +1,11 @@
 # See ../makefile
 
-# See ../makefile
 
 .PHONY: mypy ## run mypy on python-files
 mypy:
-	.venv/bin/mypy src tests
+	poetry run mypy etc src tests
+
 
 .PHONY: mypy-report ## run mypy with html-reporting
 mypy-report:
-	.venv/bin/mypy src tests --html-report  var/coverage-mypy/
+	poetry run mypy etc src tests --html-report  var/coverage-mypy/

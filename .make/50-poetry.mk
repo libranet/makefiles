@@ -27,6 +27,11 @@ poetry-install-no-dev:
 	poetry install --no-dev
 
 
+.PHONY: poetry-self-update ## update poetry itself
+poetry-self-update:
+	poetry self update
+
+
 .PHONY: poetry-update ## run poetry update to update your project-dependencies
 poetry-update:
 	poetry update
