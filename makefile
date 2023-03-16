@@ -17,9 +17,9 @@
 #   Therefore better concatenate your multiline-commands with ";\" into a single line.
 
 # Set default goal to not be dependent on sorting / ordering.
-.DEFAULT_GOAL := help  # defined in .make/default-help.mk
+.DEFAULT_GOAL := help  # defined in .make/00-help.mk
 
-PROJECT_NAME='auto-activate'
+PROJECT_NAME='project-foo'
 
 # Add virtualenv to PATH, same effect as activating the virtualenv
 export PATH := $(shell pwd)/.venv/bin:$(PATH)
