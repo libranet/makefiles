@@ -55,3 +55,8 @@ poetry-export-requirements:
 .PHONY: poetry-export-requirements-docs  ## generate a requirements.txt-file for readthedocs
 poetry-export-requirements-docs:
 	poetry export --format requirements.txt --only=docs --without-hashes --output docs/requirements.txt
+
+
+.PHONY: poetry-relax ## run poetry relax to relax upper bounds in pyproject.oml
+poetry-relax:
+	poetry relax
