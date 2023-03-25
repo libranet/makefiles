@@ -1,6 +1,5 @@
 # See ../makefile
 
-
 .PHONY: precommit-install-hook  ## install the pre-commit-hook in .git/hooks
 precommit-install-hook:
 	.venv/bin/pre-commit install

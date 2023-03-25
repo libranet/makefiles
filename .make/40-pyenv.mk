@@ -1,6 +1,5 @@
 # See ../makefile
 
-
 .PHONY: pyenv-update ## run "pyenv update" to update pyenv
 pyenv-update:
 	pyenv update

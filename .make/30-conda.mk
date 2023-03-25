@@ -1,6 +1,5 @@
 # See ../makefile
 
-
 .PHONY: install-mamba-in-base-conda  ## install mamba package manager
 install-mamba-in-base-conda:
 	conda install --name base --channel conda-forge --yes mamba
@@ -8,7 +7,7 @@ install-mamba-in-base-conda:
 
 .PHONY: conda-info ## list info currently activated conda-env
 conda-info:
-	conda info 
+	conda info
 
 
 .PHONY: conda-info-envs ## list available conda-envs

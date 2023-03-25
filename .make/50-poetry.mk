@@ -1,6 +1,5 @@
 # See ../makefile
 
-
 .PHONY: symlink-venv-dirs ## symlinks .venv-dirs to make bin/python work
 symlink-venv-dirs:
 	ln -sf .venv/bin ;\

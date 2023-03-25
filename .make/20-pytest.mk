@@ -1,6 +1,5 @@
 # See ../makefile
 
-
 .PHONY: pytest ## run pytest on python-files
 pytest:
 	- .venv/bin/pytest tests
@@ -21,6 +20,14 @@ pytest-pdb-cov:
 	- .venv/bin/pytest tests --cov=src --cov-report html  --cov-report xml --cov-report term  -v  --pdb
 
 
+.PHONY: pytest-cov-pdb  ## run pytest with the --pdb-flag and generate html-coverage
+pytest-cov-pdb: pytest-pdb-cov
+
+
 .PHONY: pytest-pdb-cov-lf
 pytest-pdb-cov-lf:
 	- .venv/bin/pytest tests --cov=src --cov-report html -v --pdb --lf
+
+
+.PHONY: pytest-cov-pdb-lf
+pytest-cov-pdb-lf: pytest-pdb-cov-lf

@@ -1,6 +1,5 @@
 # See ../makefile
 
-
 .PHONY: mamba-info ## list info currently activated conda-env (via mamba)
 conda-info:
 	mamba info
