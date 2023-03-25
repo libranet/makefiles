@@ -1,5 +1,10 @@
 # See ../makefile
 
+.PHONY: pyenv-which  ## show which pyenv is used
+pyenv-which:
+	@ which pyenv
+
+
 .PHONY: pyenv-update ## run "pyenv update" to update pyenv
 pyenv-update:
 	pyenv update

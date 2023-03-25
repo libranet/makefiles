@@ -1,5 +1,10 @@
 # See ../makefile
 
+.PHONY: conda-which  ## show which conda is used
+conda-which:
+	@ which conda
+
+
 .PHONY: install-mamba-in-base-conda  ## install mamba package manager
 install-mamba-in-base-conda:
 	conda install --name base --channel conda-forge --yes mamba
