@@ -1,10 +1,15 @@
 # See ../makefile
 
+.PHONY: mypy-which  ## show which mypy is used
+mypy-which:
+	@ which mypy
+
+
 .PHONY: mypy ## run mypy on python-files
-mypy:
-	poetry run mypy docs/ etc/ src/ tests/
+mypy: mypy-which
+	mypy src tests
 
 
 .PHONY: mypy-report ## run mypy with html-reporting
-mypy-report:
-	poetry run mypy docs/ etc/ src/ tests/ --html-report  var/coverage-mypy/
+mypy-report: mypy-which
+	mypy src tests --html-report  var/coverage-mypy/
