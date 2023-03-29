@@ -1,20 +1,9 @@
 # See ../makefile
 
-.PHONY: symlink-venv-dirs ## symlinks .venv-dirs to make bin/python work
-symlink-venv-dirs:
-	ln -sf .venv/bin ;\
-	ln -sf .venv/lib ;\
-	ln -sf .venv/lib64 ;\
-	ln -sf .venv/pyvenv.cfg
-
-
-.PHONY: create-dirs ## initialize dir-structure, create dirs
-create-dirs:
-	mkdir -p var ;\
-	mkdir -p var/cache ;\
-	mkdir -p var/cache/vscode ;\
-	mkdir -p var/log ;\
-	mkdir -p var/tmp
+# do not use ths in CD/CI where other python-versions might be tested with
+.PHONY: create-venv ## create virtual-env with specified python-version in .env
+create-venv:
+	poetry env use ${PYTHON_VERSION}
 
 
 .PHONY: poetry-install ## run poetry install to create the virtualenv
@@ -25,6 +14,16 @@ poetry-install:
 .PHONY: poetry-install-no-dev ## run poetry install without dev-dependencies
 poetry-install-no-dev:
 	poetry install --no-dev
+
+
+.PHONY: poetry-install-no-root ## run poetry install to create the virtualenv and install only the dependencies
+poetry-install-no-root:
+	poetry install --no-root
+
+
+.PHONY: poetry-install-no-root-no-dev ## run poetry install to create the virtualenv and install only the prd-dependencies
+poetry-install-no-root-no-dev:
+	poetry install --no-root --no-dev
 
 
 .PHONY: poetry-self-update ## update poetry itself
@@ -62,11 +61,22 @@ poetry-export-requirements:
 	poetry export --format requirements.txt --output requirements.txt
 
 
-.PHONY: poetry-export-requirements-docs  ## generate a requirements.txt-file for readthedocs
-poetry-export-requirements-docs:
-	poetry export --format requirements.txt --only=docs --without-hashes --output docs/requirements.txt
+# no longer needed
+# .PHONY: poetry-export-requirements-docs  ## generate a requirements.txt-file for readthedocs
+# poetry-export-requirements-docs:
+# 	poetry export --format requirements.txt --only=docs --without-hashes --output docs/requirements.txt
 
 
 .PHONY: poetry-relax ## run poetry relax to relax upper bounds in pyproject.oml
 poetry-relax:
 	poetry relax
+
+
+.PHONY: poetry-show  ## poetry show
+poetry-show:
+	poetry show -o
+
+
+.PHONY: poetry-show-outdated  ## poetry show  --outdated
+poetry-show-outdated:
+	poetry show --outdated
