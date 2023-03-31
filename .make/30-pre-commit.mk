@@ -14,6 +14,7 @@ precommit-install-hook: pre-commit-which
 precommit-uninstall-hook: pre-commit-which
 	pre-commit uninstall
 
+
 .PHONY: precommit-run-files  ## run all precommit-steps on all files
 precommit-run-files: pre-commit-which
 	pre-commit run --all-files
