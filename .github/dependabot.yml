@@ -1,0 +1,31 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/docs"
+    labels:
+      - "make"
+    open-pull-requests-limit: 99
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Europe/Berlin"
+
+  - package-ecosystem: pip
+    directory: "/.github/workflows"
+    labels:
+      - "make"
+    open-pull-requests-limit: 99
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Europe/Berlin"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    labels:
+      - "make"
+    open-pull-requests-limit: 99
+    schedule:
+      interval: daily
+      time: "04:00"
+      timezone: "Europe/Berlin"
