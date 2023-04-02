@@ -26,6 +26,10 @@ poetry-install-no-root-no-dev:
 	poetry install --no-root --no-dev
 
 
+.PHONY: poetry-lock ## run poetry lock to update poetry.lock
+poetry-lock:
+	poetry lock
+
 .PHONY: poetry-self-update ## update poetry itself
 poetry-self-update:
 	poetry self update
