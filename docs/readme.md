@@ -6,7 +6,7 @@ The repository contains a top-level makefile that includes sub-makefiles from th
 Each tool has its own sub-makefile, enabling modular and granular builds.
 
 
-**Usage:**
+**Usage**
 To use this repository for your build process, clone the repository using the following command:
 
 
