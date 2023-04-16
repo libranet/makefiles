@@ -20,9 +20,15 @@ git-push-main:
 	git push -u origin main
 
 
+.PHONY: git-show-origin-url  ## git-show-origin-url
+git-show-origin-url:
+	git config --get remote.origin.url
+
+
 .PHONY: git-remote-show-origin  ## git-remote-show-origin
 git-remote-show-origin:
 	git remote show origin
+
 
 
 .PHONY: git-fetch-tags  ## git fetch --tags
