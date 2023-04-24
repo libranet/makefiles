@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   run-tests:
-    name: Python linters
+    name: Make linter
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
